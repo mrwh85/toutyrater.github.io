@@ -1,0 +1,764 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>WebSocket · V2Ray 配置指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../app/" />
+    
+    
+    <link rel="prev" href="tls.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/ToutyRater" target="_blank" class="custom-link">My GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../prep/">
+            
+                <a href="../prep/">
+            
+                    
+                    开篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../prep/start.html">
+            
+                <a href="../prep/start.html">
+            
+                    
+                    开始之前
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../prep/install.html">
+            
+                <a href="../prep/install.html">
+            
+                    
+                    安装 V2Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../prep/json.html">
+            
+                <a href="../prep/json.html">
+            
+                    
+                    配置格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基本篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basic/vmess.html">
+            
+                <a href="../basic/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basic/Shadowsocks.html">
+            
+                <a href="../basic/Shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basic/log.html">
+            
+                <a href="../basic/log.html">
+            
+                    
+                    日志文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basic/routing/">
+            
+                <a href="../basic/routing/">
+            
+                    
+                    路由功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../basic/routing/cndirect.html">
+            
+                <a href="../basic/routing/cndirect.html">
+            
+                    
+                    国内直连
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../basic/routing/adblock.html">
+            
+                <a href="../basic/routing/adblock.html">
+            
+                    
+                    广告过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../base_config/sumup.html">
+            
+                <a href="../base_config/sumup.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    高级篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="mux.html">
+            
+                <a href="mux.html">
+            
+                    
+                    Mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="mkcp.html">
+            
+                <a href="mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="dynamicport.html">
+            
+                <a href="dynamicport.html">
+            
+                    
+                    动态端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="outboundproxy.html">
+            
+                <a href="outboundproxy.html">
+            
+                    
+                    传出代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="httpfake.html">
+            
+                <a href="httpfake.html">
+            
+                    
+                    HTTP 伪装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="tls.html">
+            
+                <a href="tls.html">
+            
+                    
+                    TLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7" data-path="websocket.html">
+            
+                <a href="websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../app/">
+            
+                <a href="../app/">
+            
+                    
+                    应用篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../app/routing-for-android.html">
+            
+                <a href="../app/routing-for-android.html">
+            
+                    
+                    路由规则之移动端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../app/dns.html">
+            
+                <a href="../app/dns.html">
+            
+                    
+                    内置 DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../app/docker-deploy-v2ray.html">
+            
+                <a href="../app/docker-deploy-v2ray.html">
+            
+                    
+                    Docker 部署 v2ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >WebSocket</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#websocket"><b>1. </b>WebSocket</a></li><ul><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;"><b>1.1. </b>&#x914D;&#x7F6E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;"><b>1.1.1. </b>&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;"><b>1.1.2. </b>&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;</a></li></ul><li><span class="title-icon "></span><a href="#&#x53E6;&#x7C7B;&#x7528;&#x6CD5;"><b>1.2. </b>&#x53E6;&#x7C7B;&#x7528;&#x6CD5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;_1"><b>1.2.1. </b>&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#nginx-&#x914D;&#x7F6E;"><b>1.2.2. </b>Nginx &#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#caddy-&#x914D;&#x7F6E;"><b>1.2.3. </b>Caddy &#x914D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;_1"><b>1.2.4. </b>&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;</a></li></ul></ul></ul></div><a href="#websocket" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="websocket"><a name="websocket" class="anchor-navigation-ex-anchor" href="#websocket"><i class="fa fa-link" aria-hidden="true"></i></a>1. WebSocket</h1>
+<p>WebSocket &#x7684;&#x914D;&#x7F6E;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x8DDF; mKCP &#x4E00;&#x6837;&#x628A; network &#x4E00;&#x6539;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x914D;&#x7F6E;&#x3002;</p>
+<h2 id="&#x914D;&#x7F6E;"><a name="&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x914D;&#x7F6E;</h2>
+<h3 id="&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;"><a name="&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;inbound&quot;</span>: {
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">16823</span>,
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {
+      <span class="hljs-string">&quot;clients&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;b831381d-6324-4d53-ad4f-8cda48b30811&quot;</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">64</span>
+        }
+      ]
+    },
+    <span class="hljs-string">&quot;streamSettings&quot;</span>:{
+      <span class="hljs-string">&quot;network&quot;</span>:<span class="hljs-string">&quot;ws&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;outbound&quot;</span>: {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;"><a name="&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;inbound&quot;</span>: {
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">1080</span>,
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;socks&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {
+      <span class="hljs-string">&quot;auth&quot;</span>: <span class="hljs-string">&quot;noauth&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;outbound&quot;</span>: {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {
+      <span class="hljs-string">&quot;vnext&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;address&quot;</span>: <span class="hljs-string">&quot;serveraddr.com&quot;</span>,
+          <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">16823</span>,
+          <span class="hljs-string">&quot;users&quot;</span>: [
+            {
+              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;b831381d-6324-4d53-ad4f-8cda48b30811&quot;</span>,
+              <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">64</span>
+            }
+          ]
+        }
+      ]
+    },
+    <span class="hljs-string">&quot;streamSettings&quot;</span>:{
+      <span class="hljs-string">&quot;network&quot;</span>:<span class="hljs-string">&quot;ws&quot;</span>
+    }
+  }
+}
+</code></pre>
+<h2 id="&#x53E6;&#x7C7B;&#x7528;&#x6CD5;"><a name="&#x53E6;&#x7C7B;&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x53E6;&#x7C7B;&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x53E6;&#x7C7B;&#x7528;&#x6CD5;</h2>
+<p>&#x4E4B;&#x524D;&#x63D0;&#x5230;&#x8FC7; TLS &#x7684;&#x914D;&#x7F6E;&#x65B9;&#x6CD5;,&#x800C;&#x8FD9;&#x91CC;&#x4E5F;&#x4F1A;&#x5B9E;&#x73B0; TLS&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x4E0D;&#x540C;&#x662F;&#x8FD9;&#x6B21; TLS &#x7684;&#x914D;&#x7F6E;&#x5C06;&#x5199;&#x5165; Nginx &#x6216;&#x8005; Caddy &#x7B49;&#x8F6F;&#x4EF6;&#x914D;&#x7F6E;&#x4E2D;&#xFF0C;&#x7531;&#x8FD9;&#x4E9B;&#x8F6F;&#x4EF6;&#x6765;&#x76D1;&#x542C; 443 &#x7AEF;&#x53E3;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x8F6C;&#x53D1;&#x5230; V2Ray&#x7684; WebSocket &#x6240;&#x76D1;&#x542C;&#x7684;&#x5185;&#x7F51;&#x7AEF;&#x53E3;&#xFF0C;Nginx &#x548C; Caddy &#x4E8C;&#x9009;&#x4E00;&#x5373;&#x53EF;&#xFF0C;&#x8FD9;&#x6837;&#x540C;&#x6837;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x5B8C;&#x6574;&#x7684; TLS&#x3002;</p>
+<h3 id="&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;_1"><a name="&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;_1" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;inbound&quot;</span>: {
+    <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">10000</span>,
+    <span class="hljs-string">&quot;listen&quot;</span>:<span class="hljs-string">&quot;127.0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;vmess&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {
+      <span class="hljs-string">&quot;clients&quot;</span>: [
+        {
+          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;b831381d-6324-4d53-ad4f-8cda48b30811&quot;</span>,
+          <span class="hljs-string">&quot;alterId&quot;</span>: <span class="hljs-number">64</span>
+        }
+      ]
+    },
+    <span class="hljs-string">&quot;streamSettings&quot;</span>:{
+      <span class="hljs-string">&quot;network&quot;</span>:<span class="hljs-string">&quot;ws&quot;</span>
+    }
+  },
+  <span class="hljs-string">&quot;outbound&quot;</span>: {
+    <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;freedom&quot;</span>,
+    <span class="hljs-string">&quot;settings&quot;</span>: {}
+  }
+}
+</code></pre>
+<h3 id="nginx-&#x914D;&#x7F6E;"><a name="nginx-&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#nginx-&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. Nginx &#x914D;&#x7F6E;</h3>
+<pre><code>server {
+  listen  443 ssl;
+  ssl on;
+  ssl_certificate       /etc/v2ray/v2ray.crt;
+  ssl_certificate_key   /etc/v2ray/v2ray.key;
+  ssl_protocols         TLSv1 TLSv1.1 TLSv1.2;
+  ssl_ciphers           HIGH:!aNULL:!MD5;
+  server_name           serveraddr.com;
+        location / {
+        proxy_redirect off;
+        proxy_pass http://127.0.0.1:10000;#&#x5047;&#x8BBE;WebSocket&#x76D1;&#x542C;&#x5728;&#x73AF;&#x56DE;&#x5730;&#x5740;&#x7684;10000&#x7AEF;&#x53E3;&#x4E0A;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &quot;upgrade&quot;;
+        proxy_set_header Host $http_host;
+        }
+}
+</code></pre><h3 id="caddy-&#x914D;&#x7F6E;"><a name="caddy-&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#caddy-&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. Caddy &#x914D;&#x7F6E;</h3>
+<pre><code>caddy serveraddr.com
+{
+  log ./caddy.log
+  proxy / locaohost:10000{
+    websocket
+    header_upstream -Origin
+  }
+}
+</code></pre><h3 id="&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;_1"><a name="&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;_1" class="anchor-navigation-ex-anchor" href="#&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. &#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-javascipt">{
+  &quot;inbound&quot;: {
+    &quot;port&quot;: 1080,
+    &quot;listen&quot;: &quot;127.0.0.1&quot;,
+    &quot;protocol&quot;: &quot;socks&quot;,
+    &quot;settings&quot;: {
+      &quot;auth&quot;: &quot;noauth&quot;,
+      &quot;udp&quot;: false
+    }
+  },
+  &quot;outbound&quot;: {
+    &quot;protocol&quot;: &quot;vmess&quot;,
+    &quot;settings&quot;: {
+      &quot;vnext&quot;: [
+        {
+          &quot;address&quot;: &quot;serveraddr.com&quot;,
+          &quot;port&quot;: 443,
+          &quot;users&quot;: [
+            {
+              &quot;id&quot;: &quot;b831381d-6324-4d53-ad4f-8cda48b30811&quot;,
+              &quot;alterId&quot;: 64
+            }
+          ]
+        }
+      ]
+    },
+    &quot;streamSettings&quot;: {
+      &quot;network&quot;: &quot;ws&quot;,
+      &quot;security&quot;: &quot;tls&quot;,
+      &quot;tlsSettings&quot;: {
+          &quot;serverName&quot;: &quot;serveraddr.com&quot;,
+          &quot;allowInsecure&quot;: false
+      }
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;&#x5728;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x4E0D;&#x80FD;&#x6210;&#x529F;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x7531;&#x4E8E; SElinux &#x673A;&#x5236;(&#x5982;&#x679C;&#x4F60;&#x662F; CentOS 7 &#x7684;&#x7528;&#x6237;&#x8BF7;&#x7279;&#x522B;&#x7559;&#x610F; SElinux &#x8FD9;&#x4E00;&#x673A;&#x5236;)&#x963B;&#x6B62;&#x4E86; Nginx &#x8F6C;&#x53D1;&#x5411;&#x5185;&#x7F51;&#x7684;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5728; V2Ray &#x7684;&#x65E5;&#x5FD7;&#x91CC;&#x4E0D;&#x4F1A;&#x6709;&#x8BBF;&#x95EE;&#x4FE1;&#x606F;&#xFF0C;&#x5728; Nginx &#x7684;&#x65E5;&#x5FD7;&#x91CC;&#x4F1A;&#x51FA;&#x73B0;&#x5927;&#x91CF;&#x7684; &quot;Permission Denied&quot; &#x5B57;&#x6BB5;&#xFF0C;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x9700;&#x8981;&#x5728;&#x7EC8;&#x7AEF;&#x4E0B;&#x952E;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<pre><code>setsebool -P httpd_can_network_connect 1
+</code></pre></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tls.html" class="navigation navigation-prev " aria-label="Previous page: TLS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../app/" class="navigation navigation-next " aria-label="Next page: 应用篇">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"WebSocket","level":"1.4.7","depth":2,"next":{"title":"应用篇","level":"1.5","depth":1,"path":"app/README.md","ref":"app/README.md","articles":[{"title":"路由规则之移动端","level":"1.5.1","depth":2,"path":"app/routing-for-android.md","ref":"app/routing-for-android.md","articles":[]},{"title":"内置 DNS","level":"1.5.2","depth":2,"path":"app/dns.md","ref":"app/dns.md","articles":[]},{"title":"Docker 部署 v2ray","level":"1.5.3","depth":2,"path":"app/docker-deploy-v2ray.md","ref":"app/docker-deploy-v2ray.md","articles":[]}]},"previous":{"title":"TLS","level":"1.4.6","depth":2,"path":"advanced/tls.md","ref":"advanced/tls.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","codeblock-filename","editlink","anchors","anchor-navigation-ex","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"修订","multilingual":false,"base":"https://github.com/toutyrater/v2ray-guide/edit/master"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"codeblock-filename":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 配置指南","links":{"sidebar":{"My GitHub":"https://github.com/ToutyRater"}},"gitbook":"*","description":"关于 V2Ray 配置的详细教程"},"file":{"path":"advanced/websocket.md","mtime":"2017-08-13T05:12:09.628Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-13T05:14:09.135Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

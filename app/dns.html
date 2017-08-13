@@ -1,0 +1,632 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>内置 DNS · V2Ray 配置指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="docker-deploy-v2ray.html" />
+    
+    
+    <link rel="prev" href="routing-for-android.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/ToutyRater" target="_blank" class="custom-link">My GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../prep/">
+            
+                <a href="../prep/">
+            
+                    
+                    开篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../prep/start.html">
+            
+                <a href="../prep/start.html">
+            
+                    
+                    开始之前
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../prep/install.html">
+            
+                <a href="../prep/install.html">
+            
+                    
+                    安装 V2Ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../prep/json.html">
+            
+                <a href="../prep/json.html">
+            
+                    
+                    配置格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基本篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basic/vmess.html">
+            
+                <a href="../basic/vmess.html">
+            
+                    
+                    VMess
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basic/Shadowsocks.html">
+            
+                <a href="../basic/Shadowsocks.html">
+            
+                    
+                    Shadowsocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basic/log.html">
+            
+                <a href="../basic/log.html">
+            
+                    
+                    日志文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basic/routing/">
+            
+                <a href="../basic/routing/">
+            
+                    
+                    路由功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../basic/routing/cndirect.html">
+            
+                <a href="../basic/routing/cndirect.html">
+            
+                    
+                    国内直连
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../basic/routing/adblock.html">
+            
+                <a href="../basic/routing/adblock.html">
+            
+                    
+                    广告过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../base_config/sumup.html">
+            
+                <a href="../base_config/sumup.html">
+            
+                    
+                    小结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    高级篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/mux.html">
+            
+                <a href="../advanced/mux.html">
+            
+                    
+                    Mux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../advanced/mkcp.html">
+            
+                <a href="../advanced/mkcp.html">
+            
+                    
+                    mKCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../advanced/dynamicport.html">
+            
+                <a href="../advanced/dynamicport.html">
+            
+                    
+                    动态端口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../advanced/outboundproxy.html">
+            
+                <a href="../advanced/outboundproxy.html">
+            
+                    
+                    传出代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../advanced/httpfake.html">
+            
+                <a href="../advanced/httpfake.html">
+            
+                    
+                    HTTP 伪装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../advanced/tls.html">
+            
+                <a href="../advanced/tls.html">
+            
+                    
+                    TLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../advanced/websocket.html">
+            
+                <a href="../advanced/websocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    应用篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="routing-for-android.html">
+            
+                <a href="routing-for-android.html">
+            
+                    
+                    路由规则之移动端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="dns.html">
+            
+                <a href="dns.html">
+            
+                    
+                    内置 DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="docker-deploy-v2ray.html">
+            
+                <a href="docker-deploy-v2ray.html">
+            
+                    
+                    Docker 部署 v2ray
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >内置 DNS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5185;&#x7F6E;-dns"><b>1. </b>&#x5185;&#x7F6E; DNS</a></li><ul><li><span class="title-icon "></span><a href="#&#x7B80;&#x4ECB;"><b>1.1. </b>&#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x5386;&#x53F2;"><b>1.2. </b>&#x66F4;&#x65B0;&#x5386;&#x53F2;</a></li></ul></ul></div><a href="#&#x5185;&#x7F6E;-dns" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5185;&#x7F6E;-dns"><a name="&#x5185;&#x7F6E;-dns" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;-dns"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5185;&#x7F6E; DNS</h1>
+<h2 id="&#x7B80;&#x4ECB;"><a name="&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7B80;&#x4ECB;</h2>
+<p>&#x4ED4;&#x7EC6;&#x770B;&#x8FC7; V2Ray &#x624B;&#x518C;&#x7684;&#x670B;&#x53CB;&#x5E94;&#x8BE5;&#x90FD;&#x77E5;&#x9053; V2Ray &#x5185;&#x7F6E;&#x6709;&#x4E00;&#x4E2A; DNS &#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x4E00;&#x8282;&#x5C31;&#x6765;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B; V2Ray &#x8FD9;&#x4E2A; DNS &#x662F;&#x600E;&#x4E48;&#x56DE;&#x4E8B;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A; DNS &#x53EF;&#x4EE5;&#x603B;&#x7ED3;&#x4E3A;&#x4E24;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x53EA;&#x4E3A; V2Ray &#x5185;&#x90E8;&#x7684; routing &#x548C; freedom &#x670D;&#x52A1;</li>
+<li>&#x53EA;&#x6709;&#x5F53; routings &#x7684; domainStrategy &#x8BBE;&#x7F6E;&#x6210; IPIfNonMatch &#x6216; freedom &#x7684; domainStrategy &#x8BBE;&#x7F6E;&#x6210; useIP &#x624D;&#x4F1A;&#x5DE5;&#x4F5C;</li>
+</ol>
+<p>&#x5176;&#x5B9E;&#x5C31;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#x3002;&#x518D;&#x8BF4;&#x591A;&#x70B9;&#x5C31;&#x662F;&#x5982;&#x679C;&#x4F60;&#x7684; domainStrategy &#x8BBE;&#x7F6E;&#x6210;&#x4E86; IPIfNonMatch&#xFF0C;&#x5728;&#x4F60;&#x4E0A;&#x7F51;&#x65F6; V2Ray &#x627E;&#x4E0D;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x7531;&#x57DF;&#x540D;&#x89C4;&#x5219;&#xFF0C;V2Ray &#x624D;&#x4F1A;&#x4F7F;&#x7528; DNS &#x8BBE;&#x7F6E;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x57DF;&#x540D;&#x89E3;&#x6790;&#x6210;IP&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x5B83;&#x53EF;&#x4E0D;&#x7BA1;&#x3002;freedom &#x540C;&#x7406;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x60F3;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x6211;&#x66FE;&#x7ECF;&#x5411; Raymond &#x63D0;&#x7684;<a href="https://github.com/v2ray/v2ray-core/issues/316" target="_blank">&#x95EE;&#x9898;</a>&#xFF0C;&#x4F46;&#x6211;&#x8BA4;&#x4E3A;&#x6CA1;&#x5FC5;&#x8981;&#x53BB;&#x770B;&#x3002;&#x53E6;&#x5916;&#x6211;&#x4E5F;&#x66FE;&#x4E13;&#x95E8;&#x6293;&#x5305;&#x5206;&#x6790;&#x8FC7; V2Ray &#x5185;&#x7F6E;&#x7684; DNS &#x8FC7;&#x7A0B;&#xFF0C;&#x4E5F;&#x4E3A;&#x4E86;&#x5199;&#x8FD9;&#x4E00;&#x5C0F;&#x8282;&#x6253;&#x4E86;&#x51E0;&#x9875;&#x7EB8;&#x7684;&#x8349;&#x7A3F;&#x89E3;&#x8BF4;&#x8FD9;&#x4E2A; DNS&#x3002;&#x4F46;&#x662F;&#x6700;&#x7EC8;&#x6CA1;&#x6709;&#x6309;&#x7A3F;&#x5B50;&#x5199;&#xFF0C;&#x56E0;&#x4E3A;&#x89C9;&#x5F97;&#x6CA1;&#x5FC5;&#x8981;&#xFF0C;&#x6211;&#x8BA4;&#x4E3A;&#x4E0A;&#x9762;&#x7684;&#x51E0;&#x53E5;&#x8BDD;&#x5DF2;&#x7ECF;&#x8DB3;&#x4EE5;&#x8BF4;&#x6E05;&#x695A;&#x3002;&#x5982;&#x679C;&#x4F60;&#x770B;&#x4E0D;&#x660E;&#x767D;&#xFF0C;&#x90A3;&#x5C31;&#x4E0D;&#x8981;&#x7EA0;&#x7F20;&#xFF0C;DNS &#x914D;&#x7F6E;&#x9879;&#x7684;&#x7F3A;&#x5931;&#x5B8C;&#x5168;&#x4E0D;&#x4F1A;&#x5BF9; V2Ray &#x7684;&#x4F7F;&#x7528;&#x6709;&#x5F71;&#x54CD;&#xFF08;&#x63D2;&#x66F2;&#xFF1A;&#x8FD9;&#x8BDD;&#x539F;&#x672C;&#x662F; &quot;DNS &#x7684;&#x7F3A;&#x7701;&#x5B8C;&#x5168;&#x2026;&#x2026;&quot;&#xFF0C;&#x6211;&#x538B;&#x6839;&#x6CA1;&#x60F3;&#x5230;&#x7ADF;&#x6709;&#x7F51;&#x53CB;&#x7406;&#x89E3;&#x6210;&#x53E6;&#x4E00;&#x4E2A;&#x610F;&#x601D;&#xFF0C;&#x4E5F;&#x602A;&#x6211;&#x7528;&#x8BCD;&#x4E0D;&#x5F53;&#x3002;&#x8FD9;&#x4E0B;&#x6539;&#x6210;&#x7F3A;&#x5931;&#x5E94;&#x8BE5;&#x4E0D;&#x4F1A;&#x6709;&#x5176;&#x5B83;&#x610F;&#x601D;&#x4E86;&#x5427;&#xFF09;&#x3002;&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97;&#x6211;&#x8BF4;&#x5F97;&#x592A;&#x8FC7;&#x7B80;&#x627C;&#xFF0C;&#x90A3;&#x5E94;&#x8BE5;&#x662F;&#x4F60;&#x60F3;&#x5F97;&#x592A;&#x590D;&#x6742;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#xFF0C;&#x6709;&#x7684;&#x7F51;&#x53CB;&#x60F3;&#x5229;&#x7528; DNS &#x4E2D;&#x7684; host &#x505A;&#x53BB;&#x5E7F;&#x544A;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x8FD9;&#x4E48;&#x8BD5;&#x8FC7;&#xFF0C;&#x4E5F;&#x4E0D;&#x77E5;&#x9053;&#x7ED3;&#x679C;&#x600E;&#x4E48;&#x6837;&#x3002;&#x6211;&#x53EA;&#x60F3;&#x8BF4;&#xFF0C;&#x8FD9;&#x662F;&#x672C;&#x672B;&#x5012;&#x7F6E;&#x4E86;&#xFF0C;&#x8981;&#x53BB;&#x5E7F;&#x544A;&#x4F7F;&#x7528; routing &#x4E0D;&#x5C31;&#x5B8C;&#x4E86;&#xFF0C;&#x8FD8;&#x8981;&#x7ED5;&#x7740;&#x6765;&#x641E; DNS&#x3002;</p>
+<p><strong>&#x7740;&#x91CD;&#x5F3A;&#x8C03;&#xFF1A;&#x8FD9;&#x91CC;&#x7684; DNS &#x4E0E;&#x8FDC;&#x7A0B; DNS &#x89E3;&#x6790;&#x4E0D;&#x662F;&#x4E00;&#x56DE;&#x4E8B;&#xFF01;</strong></p>
+<hr>
+<h2 id="&#x66F4;&#x65B0;&#x5386;&#x53F2;"><a name="&#x66F4;&#x65B0;&#x5386;&#x53F2;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x5386;&#x53F2;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x66F4;&#x65B0;&#x5386;&#x53F2;</h2>
+<ul>
+<li><p>2017-08-06 &#x4FEE;&#x6539;&#x4E0D;&#x5F53;&#x7528;&#x8BCD;</p>
+</li>
+<li><p>2017-08-06 &#x521D;&#x7248;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="routing-for-android.html" class="navigation navigation-prev " aria-label="Previous page: 路由规则之移动端">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="docker-deploy-v2ray.html" class="navigation navigation-next " aria-label="Next page: Docker 部署 v2ray">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"内置 DNS","level":"1.5.2","depth":2,"next":{"title":"Docker 部署 v2ray","level":"1.5.3","depth":2,"path":"app/docker-deploy-v2ray.md","ref":"app/docker-deploy-v2ray.md","articles":[]},"previous":{"title":"路由规则之移动端","level":"1.5.1","depth":2,"path":"app/routing-for-android.md","ref":"app/routing-for-android.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","codeblock-filename","editlink","anchors","anchor-navigation-ex","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"修订","multilingual":false,"base":"https://github.com/toutyrater/v2ray-guide/edit/master"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"codeblock-filename":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"V2Ray 配置指南","links":{"sidebar":{"My GitHub":"https://github.com/ToutyRater"}},"gitbook":"*","description":"关于 V2Ray 配置的详细教程"},"file":{"path":"app/dns.md","mtime":"2017-08-13T05:12:09.628Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-13T05:14:09.135Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
