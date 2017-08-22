@@ -55,183 +55,178 @@ V2Ray v2.33 is installed.
 $ sudo systemctl start v2ray
 
 
-#修改配置文件重启
+# 修改配置文件重启
 
 
-客户端配置文件
-
-{
-  "port": 1080,
-  "log": {
-    "access": ""
-  },
-  "inbound": {
-    "protocol": "socks",
-    "settings": {
-      "auth": "noauth",
-      "udp": false,
-      "ip": "127.0.0.1"
-    }
-  },
-  "outbound": {
-    "protocol": "vmess",
-    "settings": {
-      "vnext": [
-        {
-          "address": "1.2.3.4", //服务器VPS IP地址
-          "port": 12345, //通讯端口，客户端和服务端一致，自定
-          "users": [
-            {
-              "id": "293c95b0-a4a2-47d5-b6eb-da8e6894e7b8", //UUID 在这个网站随机生成一个
-              ，https://www.uuidgenerator.net， 要保证client和server配置一个UUID
-              "alterId": 55 // 这个自定，数字范围0-100，但要保证客户端和服务端一致
-            }
-          ]
-        }
-      ]
-    }
-  },
-  "outboundDetour": [
-    {
-      "protocol": "freedom",
-      "settings": {},
-      "tag": "direct"
-    }
-  ],
-  "routing": {
-    "strategy": "rules",
-    "settings": {
-      "rules": [
-        {
-          "type": "field",
-          "port": "54-79",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "port": "81-442",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "port": "444-65535",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "gc.kis.scr.kaspersky-labs.com"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "chinasites",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "ip": [
-            "0.0.0.0/8",
-            "10.0.0.0/8",
-            "100.64.0.0/10",
-            "127.0.0.0/8",
-            "169.254.0.0/16",
-            "172.16.0.0/12",
-            "192.0.0.0/24",
-            "192.0.2.0/24",
-            "192.168.0.0/16",
-            "198.18.0.0/15",
-            "198.51.100.0/24",
-            "203.0.113.0/24",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "chinaip",
-          "outboundTag": "direct"
-        }
-      ]
-    }
-  }
-}
-v2ray-server.json
-
-服务端配置文件，(基本不需要修改)
-{
-  "port": 12345, //通讯端口，客户端和服务端一致，自定
-  "log" : {
-    "access": "/var/log/v2ray/access.log", 
-    "error": "/var/log/v2ray/error.log",  
-    "loglevel": "warning"                  
-  },
-  "inbound": {
-    "protocol": "vmess",    
-    "settings": {
-      "clients": [
-        {
-          "id": "293c95b0-a4a2-47d5-b6eb-da8e6894e7b8",  //UUID 在这个网站随机生成一个，https://www.uuidgenerator.net， 要保证client和server配置一个UUID
-          "alterId": 55,  // 这个自定，数字范围0-100，但要保证客户端和服务端一致
-          "level": 1  // 官方说明，0 共享VPS, 1 自用VPS
-        }
-      ]
-    }
-  },
-  "outbound": {
-    "protocol": "freedom",  
-    "settings": {}
-  },
-  "inboundDetour": [
-    {
-      "protocol": "shadowsocks",   // 此段为支持SS协议部分
-      "port": 1234, 
-      "settings": {
-        "method": "chacha20", // 加密协议支持aes-256-cfb, aes-128-cfb, chacha20 (V2Ray 1.9+), chacha20-ietf (V2Ray 1.9+)
-        "password": "v2ray",     
-        "udp": false             //是否支持UDP中转
-      }
-    }
-  ],
-  "outboundDetour": [
-    {
-      "protocol": "blackhole",  
-      "settings": {},
-      "tag": "blocked"
-    }
-  ],
-  "routing": {
-    "strategy": "rules",
-    "settings": {
-      "rules": [
-        {
-          "type": "field",  
-          "ip": [
-            "0.0.0.0/8",
-            "10.0.0.0/8",
-            "100.64.0.0/10",
-            "127.0.0.0/8",
-            "169.254.0.0/16",
-            "172.16.0.0/12",
-            "192.0.0.0/24",
-            "192.0.2.0/24",
-            "192.168.0.0/16",
-            "198.18.0.0/15",
-            "198.51.100.0/24",
-            "203.0.113.0/24",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "blocked"
-        }
-      ]
-    }
-  }
-}
-
-
-
-
-
+- 客户端配置文件
+-
+- {
+-  "port": 1080,
+-  "log": {
+-    "access": ""
+-  },
+-  "inbound": {
+-    "protocol": "socks",
+-    "settings": {
+-      "auth": "noauth",
+-      "udp": false,
+-      "ip": "127.0.0.1"
+-    }
+-  },
+-  "outbound": {
+-    "protocol": "vmess",
+-    "settings": {
+-      "vnext": [
+-        {
+-            "address": "1.2.3.4", //服务器VPS IP地址
+-           "port": 12345, //通讯端口，客户端和服务端一致，自定 
+-           "users": [
+-            {
+-              "id": "293c95b0-a4a2-47d5-b6eb-da8e6894e7b8", //UUID 在这个网站随机生成一个，https://www.uuidgenerator.net， 要保证client和server配置一个UUID
+-              "alterId": 55 // 这个自定，数字范围0-100，但要保证客户端和服务端一致
+-            }
+-          ]
+-        }
+-      ]
+-    }
+-  },
+-  "outboundDetour": [
+-    {
+-      "protocol": "freedom",
+-      "settings": {},
+-     "tag": "direct"
+-    }
+-  ],
+-  "routing": {
+-    "strategy": "rules",
+-    "settings": {
+-      "rules": [
+-        {
+-          "type": "field",
+-          "port": "54-79",
+-          "outboundTag": "direct"
+-        },
+-       {
+-          "type": "field",
+-          "port": "81-442",
+-          "outboundTag": "direct"
+-        },
+-        {
+-          "type": "field",
+-          "port": "444-65535",
+-          "outboundTag": "direct"
+-        },
+-        {
+-          "type": "field",
+-          "domain": [
+-            "gc.kis.scr.kaspersky-labs.com"
+-          ],
+-          "outboundTag": "direct"
+-        },
+-       {
+-          "type": "chinasites",
+-          "outboundTag": "direct"
+-        },
+-        {
+-          "type": "field",
+-          "ip": [
+-            "0.0.0.0/8",
+-            "10.0.0.0/8",
+-            "100.64.0.0/10",
+-            "127.0.0.0/8",
+-            "169.254.0.0/16",
+-            "172.16.0.0/12",
+-            "192.0.0.0/24",
+-            "192.0.2.0/24",
+-            "192.168.0.0/16",
+-            "198.18.0.0/15",
+-            "198.51.100.0/24",
+-            "203.0.113.0/24",
+-            "::1/128",
+-            "fc00::/7",
+-            "fe80::/10"
+-          ],
+-          "outboundTag": "direct"
+-        },
+-        {
+-          "type": "chinaip",
+-          "outboundTag": "direct"
+-        }
+-     ]
+-    }
+-  }
+- }
+- v2ray-server.json
+- 服务端配置文件，(基本不需要修改)
+-
+-
+-{
+-  "port": 12345, //通讯端口，客户端和服务端一致，自定
+-  "log" : {
+-    "access": "/var/log/v2ray/access.log", 
+-    "error": "/var/log/v2ray/error.log",  
+-    "loglevel": "warning"                  
+-  },
+-  "inbound": {
+-    "protocol": "vmess",    
+-    "settings": {
+-      "clients": [
+-        {
+-          "id": "293c95b0-a4a2-47d5-b6eb-da8e6894e7b8",  //UUID 在这个网站随机生成一个，https://www.uuidgenerator.net， 要保证client和---server配置一个UUID
+-          "alterId": 55,  // 这个自定，数字范围0-100，但要保证客户端和服务端一致
+-          "level": 1  // 官方说明，0 共享VPS, 1 自用VPS
+-       }
+-      ]
+-    }
+-  },
+-  "outbound": {
+-    "protocol": "freedom",  
+-    "settings": {}
+-  },
+-  "inboundDetour": [
+-    {
+-      "protocol": "shadowsocks",   // 此段为支持SS协议部分
+-      "port": 1234, 
+-      "settings": {
+-        "method": "chacha20", // 加密协议支持aes-256-cfb, aes-128-cfb, chacha20 (V2Ray 1.9+), chacha20-ietf (V2Ray 1.9+)
+-        "password": "v2ray",     
+-        "udp": false             //是否支持UDP中转
+-      }
+-    }
+-  ],
+-  "outboundDetour": [
+-    {
+-      "protocol": "blackhole",  
+-      "settings": {},
+-      "tag": "blocked"
+-    }
+-  ],
+-  "routing": {
+-    "strategy": "rules",
+-    "settings": {
+-      "rules": [
+-        {
+-          "type": "field",  
+-          "ip": [
+-            "0.0.0.0/8",
+-            "10.0.0.0/8",
+-            "100.64.0.0/10",
+-            "127.0.0.0/8",
+-            "169.254.0.0/16",
+-            "172.16.0.0/12",
+-            "192.0.0.0/24",
+-            "192.0.2.0/24",
+-            "192.168.0.0/16",
+-            "198.18.0.0/15",
+-            "198.51.100.0/24",
+-            "203.0.113.0/24",
+-            "::1/128",
+-            "fc00::/7",
+-            "fe80::/10"
+-          ],
+-          "outboundTag": "blocked"
+-        }
+-      ]
+-    }
+-  }
+-}
